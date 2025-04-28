@@ -18,6 +18,7 @@ membersCount =
 
 type Route
     = Home
+    | NewsPage
     | Guides
     | Rules
     | Champions
@@ -58,3 +59,7 @@ type alias News =
 
 type alias CSSList msg =
     List (Attribute msg)
+
+
+type alias ChampionTips =
+    { id : Int, text : String, link : Maybe String }
