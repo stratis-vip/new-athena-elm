@@ -6,6 +6,7 @@ import Html.Events exposing (onClick, onMouseLeave, onMouseOver)
 import Types exposing (Model, Msg(..), membersCount, version)
 
 
+
 navBarComponent : Model -> Html Msg
 navBarComponent model =
     -- div navMainStyle
