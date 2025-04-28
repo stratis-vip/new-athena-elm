@@ -8,4 +8,11 @@
 
 1. Create the repository
 2. Correct some minor css problems, because of Flyon library
-3. Add new components.
+3. Correct components:
+   * newsComponent
+   * NavBarComponent
+4. Add new components:
+   * ChampionsComponent
+5. Add new folder Data to keep all data files (for now, news, and champion tips.)
+6. Webpack dev server can't manage urls, so i put in home url "/" the testing component. Right now the Champions.
+
