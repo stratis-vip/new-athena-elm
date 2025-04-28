@@ -54,7 +54,7 @@ navBarComponent model =
 
 menuChoices : List ( String, String )
 menuChoices =
-    [ ( "/", "News" )
+    [ ( "/news", "News" )
     , ( "/rules", "Rules" )
     , ( "/champions", "Champions" )
     , ( "/guides", "Guides" )
@@ -66,7 +66,7 @@ menuChoices =
 
 createMenu : List ( String, String ) -> List (Html Msg)
 createMenu ms =
-    List.map (\( x, y ) -> div [ class "pb-3 pl-2" ] [ a [ href x ] [ text y ] ]) ms
+    List.map (\( x, y ) -> div [ class "pb-3 sm:pb-0 pl-2 sm:pl-0" ] [ a [ href x ] [ text y ] ]) ms
 
 
 menuStyle : String
