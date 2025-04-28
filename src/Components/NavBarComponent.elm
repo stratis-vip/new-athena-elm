@@ -7,6 +7,9 @@ import Types exposing (Model, Msg(..), membersCount, version)
 
 
 
+-- | The NavBar
+
+
 navBarComponent : Model -> Html Msg
 navBarComponent model =
     -- div navMainStyle
@@ -16,8 +19,7 @@ navBarComponent model =
         ]
         [ --div badgeStyle
           div [ id "navbar", class "flex justify-between" ]
-            [ --img (badgeImageStyle ++ [o src "images/athena.png", alt "new-athena" ])
-              div [ id "badge-top", class "py-1 flex items-center" ]
+            [ div [ id "badge-top", class "py-1 flex items-center" ]
                 [ div [ id "badge", class "flex sm:justify-center sm:align-center" ]
                     [ img
                         [ class "my-0"
@@ -38,37 +40,47 @@ navBarComponent model =
                 ]
             , div [ id "burger", class "sm:hidden self-center mr-1" ]
                 [ img
-                    [ src "/images/burger.svg"
+                    [ src "require:src/images/burger.svg"
                     , onClick ToggleBurger
                     , style "width" "36px"
                     ]
                     []
                 ]
             ]
-        , div [ id "menuChoices", class (hideMenu model) ]
-            [ div [] [ a [ href "/" ] [ text "News" ] ]
-            , div [] [ a [ href "/rules" ] [ text "Rules" ] ]
-            , div [] [ a [ href "/champions" ] [ text "Champions" ] ]
-            , div [] [ a [ href "/guides" ] [ text "Guides" ] ]
-            , div [] [ a [ href "/c-teams" ] [ text "Counters" ] ]
-            , div [] [ a [ href "/program" ] [ text "War Program" ] ]
-            , div [] [ a [ href "/users" ] [ text "Time Table" ] ]
-            ]
+        , div [ id "menuChoices", hideMenu model ] <|
+            createMenu menuChoices
         ]
+
+
+menuChoices : List ( String, String )
+menuChoices =
+    [ ( "/", "News" )
+    , ( "/rules", "Rules" )
+    , ( "/champions", "Champions" )
+    , ( "/guides", "Guides" )
+    , ( "/c-teams", "Counters" )
+    , ( "/program", "War Program" )
+    , ( "/users", "Time Table" )
+    ]
+
+
+createMenu : List ( String, String ) -> List (Html Msg)
+createMenu ms =
+    List.map (\( x, y ) -> div [ class "pb-3 pl-2" ] [ a [ href x ] [ text y ] ]) ms
 
 
 menuStyle : String
 menuStyle =
-    " sm:flex flex flex-col sm:justify-around sm:flex-1 sm:flex-row"
+    " sm:flex flex flex-col sm:justify-around sm:flex-1 sm:flex-row text-xl normal"
 
 
-hideMenu : Model -> String
+hideMenu : Model -> Html.Attribute msg
 hideMenu model =
     if model.open then
-        menuStyle
+        class menuStyle
 
     else
-        menuStyle ++ " hidden"
+        class <| menuStyle ++ " hidden"
 
 
 versionStyle : String
