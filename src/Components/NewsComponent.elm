@@ -1,7 +1,7 @@
 module Components.NewsComponent exposing (newsComponent)
 
 import Html exposing (Html, div, option, select, text)
-import Html.Attributes exposing (class, id, selected, value)
+import Html.Attributes exposing (class, id, selected, style, value)
 import Html.Events exposing (onInput)
 import Types exposing (Model, Msg(..), News)
 
@@ -27,7 +27,7 @@ selectComponent model years =
         , div [ class "flex justify-center" ]
             [ select
                 [ id "year"
-                , class "mt-2 p-1 text-2xl border rounded-lg mx-2 shadow cursor-pointer"
+                , class " select ml-2 w-max-lg text-2xl  cursor-pointer"
                 , onInput Year
                 ]
                 (createSelect model years)
@@ -54,12 +54,11 @@ createNews model lnews =
     List.map
         (\x ->
             div
-                [ class "card mb-2 mx-5"
-
-                -- , style "background-color" "#d6e8f361"
+                [ class "card mb-2 mx-5 text-lg"
+                , style "background-color" "#d6e8f361"
                 ]
-                [ div [ class "text-center font-bold text-2xl border-b-2 pt-3 pb-1" ]
-                    [ text <| x.date ++ ":" ]
+                [ div [ class "text-center text-blue-300 font-bold text-2xl border-black border-b-2 pt-3 pb-1" ]
+                    [ text <| x.date ]
                 , div [ class "px-4 py-1 text-center" ]
                     [ text x.text ]
                 , div [ class (hideClass (\y -> y.points == Nothing || y.place == Nothing) x "text-center pt-1 pb-3") ]
