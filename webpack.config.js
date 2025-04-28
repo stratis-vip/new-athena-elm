@@ -13,13 +13,13 @@ module.exports = {
     clean: true,
   },
   plugins: [new HtmlWebpackPlugin({
-      title: 'elm with webpack'
-  //     template: 'src/index.html'
+    title: 'elm with webpack'
+    , favicon: './src/images/favicon.ico'
   })],
   devServer: {
-    static: './dist/' 
+    static: './dist/'
   },
-  module:{
+  module: {
     rules: [
       {
         test: /\.html$/,
@@ -39,16 +39,16 @@ module.exports = {
             loader: 'elm-asset-webpack-loader',
           },
           {
-          loader: 'elm-webpack-loader',
-          options: {}
-        }]
+            loader: 'elm-webpack-loader',
+            options: {}
+          }]
       },
       {
         test: /\.css$/i,
         use: [
-          'style-loader', 
+          'style-loader',
           'css-loader'
-          ,'postcss-loader'
+          , 'postcss-loader'
         ]
       },
     ]
