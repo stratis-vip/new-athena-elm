@@ -5,9 +5,9 @@ import Browser.Navigation as Nav
 import Components.ChampionsComponent exposing (championsComponent)
 import Components.NavBarComponent exposing (navBarComponent)
 import Components.NewsComponent exposing (newsComponent)
+import Data.News exposing (news, years)
 import Html exposing (Html, div, text)
 import Html.Attributes exposing (..)
-import News exposing (news, years)
 import Router exposing (parseRoute)
 import Types exposing (Flags, Model, Msg(..), Route(..))
 import Url exposing (Url)
@@ -89,11 +89,18 @@ view model =
     }
 
 
+
+-- TODO corect the hompe page!!!
+
+
 viewContent : Model -> Html Msg
 viewContent model =
     div []
         [ case model.route of
             Home ->
+                div [] [ championsComponent ]
+
+            NewsPage ->
                 div [] [ newsComponent model years news ]
 
             Guides ->

@@ -5,17 +5,27 @@ import Url exposing (Url)
 import Url.Parser exposing (Parser, map, oneOf, parse, s, top)
 
 
+
+-- TODO to change the home page!!!!
+
+
 routerParser : Parser (Route -> a) a
 routerParser =
     oneOf
-        [ top |> map Home
-        , s "guides" |> map Guides
-        , s "rules" |> map Rules
-        , s "champions" |> map Champions
-        , s "c-teams" |> map CounterTeams
-        , s "program" |> map WarProgram
-        , s "users" |> map Users
-        ]
+        (List.map (\( parser, routeConstructor ) -> parser |> map routeConstructor) routes)
+
+
+routes : List ( Parser a a, Route )
+routes =
+    [ ( top, Champions ) -- <- for developing reasons! In production this will be Home!
+    , ( s "news", NewsPage )
+    , ( s "guides", Guides )
+    , ( s "rules", Rules )
+    , ( s "champions", Champions )
+    , ( s "c-teams", CounterTeams )
+    , ( s "program", WarProgram )
+    , ( s "users", Users )
+    ]
 
 
 parseRoute : Url -> Route
