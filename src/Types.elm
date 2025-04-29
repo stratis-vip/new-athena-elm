@@ -63,3 +63,7 @@ type alias CSSList msg =
 
 type alias ChampionTips =
     { id : Int, text : String, link : Maybe String }
+
+
+type alias Rule =
+    { id : Int, title : String, explanation : String }
