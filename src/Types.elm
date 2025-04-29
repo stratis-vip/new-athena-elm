@@ -16,6 +16,10 @@ membersCount =
     28
 
 
+type alias ID =
+    Int
+
+
 type Route
     = Home
     | NewsPage
@@ -62,8 +66,20 @@ type alias CSSList msg =
 
 
 type alias ChampionTips =
-    { id : Int, text : String, link : Maybe String }
+    { id : ID, text : String, link : Maybe String }
 
 
 type alias Rule =
-    { id : Int, title : String, explanation : String }
+    { id : ID, title : String, explanation : String }
+
+
+type TipCategory
+    = GeneralCat -- from 0 - 999
+    | HerosCat -- from 1000 - 1999
+    | TitansCat -- from 2000 - 2999
+    | SpookyFestivalCat -- from 3000 - 3999
+    | VariousCat -- from 10000
+
+
+type alias Tip =
+    { id : ID, category : TipCategory, text : String }
