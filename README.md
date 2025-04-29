@@ -14,5 +14,11 @@
 4. Add new components:
    * ChampionsComponent
 5. Add new folder Data to keep all data files (for now, news, and champion tips.)
-6. Webpack dev server can't manage urls, so i put in home url "/" the testing component. Right now the Champions.
+6. Webpack dev server can't manage urls, so i put in home url "/" the testing component.
+Right now the Champions.
 
+### 2025-04-28
+
+1. Add rules data
+2. Create rulesComponent
+3. Webpack dev server current to rules.
