@@ -8,7 +8,7 @@ import Types exposing (ChampionTips, Msg(..))
 
 championsComponent : Html Msg
 championsComponent =
-    div [ class "flex flex-col items-center mt-5 sm:mt-4 text-xl " ]
+    div [ class "sm:mx-10 flex flex-col items-center mt-5 sm:mt-4 text-xl " ]
         [ span [ class "font-bold" ] [ text "How to be a Champion of New Athena" ]
         , div
             [ class "container mt-4  sm:text-lg sm:mx-4 mx-2 " ]
