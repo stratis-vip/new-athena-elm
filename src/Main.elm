@@ -5,6 +5,7 @@ import Browser.Navigation as Nav
 import Components.ChampionsComponent exposing (championsComponent)
 import Components.NavBarComponent exposing (navBarComponent)
 import Components.NewsComponent exposing (newsComponent)
+import Components.RulesComponent exposing (rulesComponent)
 import Data.News exposing (news, years)
 import Html exposing (Html, div, text)
 import Html.Attributes exposing (..)
@@ -107,7 +108,7 @@ viewContent model =
                 div [] [ text "This is the guides" ]
 
             Rules ->
-                div [] [ text "rules" ]
+                div [] [ rulesComponent ]
 
             Champions ->
                 div [] [ championsComponent ]
