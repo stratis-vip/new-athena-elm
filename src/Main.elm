@@ -3,9 +3,11 @@ module Main exposing (..)
 import Browser exposing (UrlRequest(..))
 import Browser.Navigation as Nav
 import Components.ChampionsComponent exposing (championsComponent)
+import Components.GuidesComponent exposing (guidesComponent)
 import Components.NavBarComponent exposing (navBarComponent)
 import Components.NewsComponent exposing (newsComponent)
 import Components.RulesComponent exposing (rulesComponent)
+import Components.SectionComponent exposing (sectionComponent)
 import Data.News exposing (news, years)
 import Html exposing (Html, div, text)
 import Html.Attributes exposing (..)
@@ -99,31 +101,31 @@ viewContent model =
     div []
         [ case model.route of
             Home ->
-                div [] [ championsComponent ]
+                div [] [ sectionComponent "" championsComponent ]
 
             NewsPage ->
-                div [] [ newsComponent model years news ]
+                div [] [ sectionComponent "" <| newsComponent model years news ]
 
             Guides ->
-                div [] [ text "This is the guides" ]
+                div [] [ sectionComponent "Guides" guidesComponent ]
 
             Rules ->
-                div [] [ rulesComponent ]
+                div [] [ sectionComponent "" rulesComponent ]
 
             Champions ->
-                div [] [ championsComponent ]
+                div [] [ sectionComponent "" championsComponent ]
 
             Types.WarProgram ->
-                div [] [ text "War PRogram" ]
+                div [] [ sectionComponent "" <| text "War PRogram" ]
 
             Types.CounterTeams ->
-                div [] [ text "CounterTeams" ]
+                div [] [ sectionComponent "" <| text "CounterTeams" ]
 
             Users ->
-                div [] [ text "Users" ]
+                div [] [ sectionComponent "" <| text "Users" ]
 
             _ ->
-                div [] [ text "NotFound" ]
+                div [] [ sectionComponent "" <| text "NotFound" ]
         ]
 
 
