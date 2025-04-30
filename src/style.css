@@ -3,4 +3,6 @@
 
 @theme {
   --color-main: oklch(0.702 0.15 263.5); /*#6495ed*/
+  --color-bg-card: oklch(0.92 0.0244 234.43 / 38.04%)  /*#d6e8f361*/
+
 }
