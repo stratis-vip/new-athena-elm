@@ -8,9 +8,8 @@ import Types exposing (Msg, Rule)
 
 rulesComponent : Html Msg
 rulesComponent =
-    div [ class "sm:mx-20 text-lg" ]
-        [ h1 [ class "mt-10 text-3xl text-center" ] [ text "General rules of our Guild" ]
-        , div [ class "mx-5 accordion divide-neutral/20 divide-y" ]
+    div []
+        [ div [ class "mx-5 accordion divide-neutral/20 divide-y" ]
             -- active
             (List.map makeItem rules)
         ]
@@ -53,7 +52,7 @@ makeItem rule =
             setTitleID rule
     in
     div [ itemClass, id idText ]
-        [ button [ class "accordion-toggle text-start" ] [ text rule.title ]
+        [ button [ class "accordion-toggle text-start font-bold" ] [ text rule.title ]
         , div [ id (idText ++ "-collapse"), setExplanationClass rule ]
             [ div [ class "px-5 pb-4" ]
                 [ p [ class "text-base-content/80 font-normal" ] [ text rule.explanation ]

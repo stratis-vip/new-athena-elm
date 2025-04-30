@@ -110,7 +110,7 @@ viewContent model =
                 div [] [ sectionComponent "Guides" guidesComponent ]
 
             Rules ->
-                div [] [ sectionComponent "" rulesComponent ]
+                div [] [ sectionComponent "General rules" rulesComponent ]
 
             Champions ->
                 div [] [ sectionComponent "" championsComponent ]
