@@ -17,7 +17,7 @@ routerParser =
 
 routes : List ( Parser a a, Route )
 routes =
-    [ ( top, Rules ) -- <- for developing reasons! In production this will be Home!
+    [ ( top, Champions ) -- <- for developing reasons! In production this will be Home!
     , ( s "news", NewsPage )
     , ( s "guides", Guides )
     , ( s "rules", Rules )

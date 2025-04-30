@@ -1,19 +1,16 @@
 module Components.ChampionsComponent exposing (..)
 
 import Data.ChampionTips exposing (champTips)
-import Html exposing (Html, a, div, span, text)
+import Html exposing (Html, a, div, text)
 import Html.Attributes exposing (class, href)
 import Types exposing (ChampionTips, Msg(..))
 
 
 championsComponent : Html Msg
 championsComponent =
-    div [ class "sm:mx-10 flex flex-col items-center mt-5 sm:mt-4 text-xl " ]
-        [ span [ class "font-bold" ] [ text "How to be a Champion of New Athena" ]
-        , div
-            [ class "container mt-4  sm:text-lg sm:mx-4 mx-2 " ]
-            (fillChampTips champTips)
-        ]
+    div
+        [ class "container mt-4  sm:text-lg sm:mx-4 mx-2 " ]
+        (fillChampTips champTips)
 
 
 fillChampTips : List ChampionTips -> List (Html Msg)

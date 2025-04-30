@@ -1,7 +1,7 @@
 module Components.RulesComponent exposing (..)
 
 import Data.Rules exposing (rules)
-import Html exposing (Html, button, div, h1, p, text)
+import Html exposing (Html, button, div, p, text)
 import Html.Attributes exposing (class, id)
 import Types exposing (Msg, Rule)
 

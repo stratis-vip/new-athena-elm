@@ -113,7 +113,7 @@ viewContent model =
                 div [] [ sectionComponent "General rules" rulesComponent ]
 
             Champions ->
-                div [] [ sectionComponent "" championsComponent ]
+                div [] [ sectionComponent "How to be a Champion of New Athena" championsComponent ]
 
             Types.WarProgram ->
                 div [] [ sectionComponent "" <| text "War PRogram" ]
