@@ -104,7 +104,7 @@ viewContent model =
                 div [] [ sectionComponent "" championsComponent ]
 
             NewsPage ->
-                div [] [ sectionComponent "" <| newsComponent model years news ]
+                div [] [ sectionComponent "News" <| newsComponent model years news ]
 
             Guides ->
                 div [] [ sectionComponent "Guides" guidesComponent ]

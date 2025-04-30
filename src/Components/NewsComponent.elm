@@ -1,14 +1,14 @@
 module Components.NewsComponent exposing (newsComponent)
 
 import Html exposing (Html, div, option, select, text)
-import Html.Attributes exposing (class, id, selected, style, value)
+import Html.Attributes exposing (class, id, selected, value)
 import Html.Events exposing (onInput)
 import Types exposing (Model, Msg(..), News)
 
 
 newsComponent : Model -> List Int -> List News -> Html Msg
 newsComponent model years news =
-    div [ class "flex flex-col items-center mt-5 sm:mt-10 text-xl" ]
+    div []
         [ div
             [ class "container" ]
             [ selectComponent model years ]
@@ -22,12 +22,12 @@ selectComponent : Model -> List Int -> Html Msg
 selectComponent model years =
     div
         [ class "flex justify-center items-center mb-3" ]
-        [ div [ class "text-3xl text-center" ]
-            [ text "News for year" ]
+        [ div [ class "text-2xl text-center" ]
+            [ text "Year:" ]
         , div [ class "flex justify-center" ]
             [ select
                 [ id "year"
-                , class " select ml-2 w-max-lg text-2xl  cursor-pointer"
+                , class " select ml-2 w-max-lg text-xl  cursor-pointer"
                 , onInput Year
                 ]
                 (createSelect model years)
@@ -54,10 +54,8 @@ createNews model lnews =
     List.map
         (\x ->
             div
-                [ class "card mb-2 mx-5 text-lg"
-                , style "background-color" "#d6e8f361"
-                ]
-                [ div [ class "text-center text-blue-300 font-bold text-2xl border-black border-b-2 pt-3 pb-1" ]
+                [ class "card mb-2 mx-5 text-lg bg-bg-card" ]
+                [ div [ class "text-center text-main font-bold text-2xl border-black border-b-2 pt-3 pb-1" ]
                     [ text <| x.date ]
                 , div [ class "px-4 py-1 text-center" ]
                     [ text x.text ]
