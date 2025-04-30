@@ -15,7 +15,7 @@ navBarComponent model =
     -- div navMainStyle
     div
         [ id "navBar-top"
-        , class "bg-accent p-1  my-0 text-white flex flex-col sm:flex-row sm:items-center"
+        , class "bg-main p-1  my-0 text-white flex flex-col sm:flex-row sm:items-center"
         ]
         [ --div badgeStyle
           div [ id "navbar", class "flex justify-between" ]

@@ -1,2 +1,6 @@
 @import 'tailwindcss';
 @plugin "flyonui";
+
+@theme {
+  --color-main: oklch(0.702 0.15 263.5); /*#6495ed*/
+}
