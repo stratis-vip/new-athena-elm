@@ -1,10 +1,10 @@
-module Data.ChampionTips exposing (..)
+module Data.ChampionRules exposing (..)
 
-import Types exposing (ChampionTips)
+import Types exposing (ChampionRules)
 
 
-champTips : List ChampionTips
-champTips =
+championRules : List ChampionRules
+championRules =
     [ { id = 1
       , text = "At the moment and while we are in the edge of Gold/Silver league, we need members with strong Titans and Heros (over 1M)."
       , link = Nothing

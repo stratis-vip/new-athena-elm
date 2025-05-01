@@ -1,24 +1,24 @@
 module Components.ChampionsComponent exposing (..)
 
-import Data.ChampionTips exposing (champTips)
+import Data.ChampionRules exposing (championRules)
 import Html exposing (Html, a, div, text)
 import Html.Attributes exposing (class, href)
-import Types exposing (ChampionTips, Msg(..))
+import Types exposing (ChampionRules, Msg(..))
 
 
 championsComponent : Html Msg
 championsComponent =
     div
         [ class "container mt-4  sm:text-lg sm:mx-4 mx-2 " ]
-        (fillChampTips champTips)
+        (fillChampTips championRules)
 
 
-fillChampTips : List ChampionTips -> List (Html Msg)
+fillChampTips : List ChampionRules -> List (Html Msg)
 fillChampTips tips =
     List.map fillTip tips
 
 
-fillTip : ChampionTips -> Html Msg
+fillTip : ChampionRules -> Html Msg
 fillTip tip =
     let
         tx =

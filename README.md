@@ -17,8 +17,21 @@
 6. Webpack dev server can't manage urls, so i put in home url "/" the testing component.
 Right now the Champions.
 
-### 2025-04-28
+### 2025-04-29
 
 1. Add rules data
 2. Create rulesComponent
 3. Webpack dev server current to rules.
+
+### 2025-04-30
+
+  1. Add a Section (title, children) component to keep the same behaviour on pages.
+  2. Add a custom color in style.css (main). So, now -bg-main is the color!
+  3. Remove CssConsts.elm. All css values going to style.css
+  4. Change to newsComponent so it will have a title.
+
+### 2025-05-01
+
+  1. Succesfully remove "require" part of images!!!
+  2. Adventures works correctly in guides
+  3. Assorted tips are working in guides

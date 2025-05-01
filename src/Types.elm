@@ -29,6 +29,7 @@ type Route
     | CounterTeams
     | WarProgram
     | Users
+    | Image String
     | NotFound
 
 
@@ -65,7 +66,7 @@ type alias CSSList msg =
     List (Attribute msg)
 
 
-type alias ChampionTips =
+type alias ChampionRules =
     { id : ID, text : String, link : Maybe String }
 
 
@@ -83,3 +84,80 @@ type TipCategory
 
 type alias Tip =
     { id : ID, category : TipCategory, text : String }
+
+
+type alias HasID a =
+    { getId : a -> ID
+    , getText : a -> String
+    }
+
+
+hasIdTips : HasID Tip
+hasIdTips =
+    { getId = .id
+    , getText = .text
+    }
+
+
+sortByCat : List Tip -> List { category : TipCategory, tips : List String }
+sortByCat tipList =
+    let
+        -- Group tips by category
+        grouped =
+            List.foldr
+                (\tip acc ->
+                    let
+                        existing =
+                            List.filter (\g -> g.category == tip.category) acc
+                    in
+                    case existing of
+                        [] ->
+                            { category = tip.category, tips = [ tip.text ] } :: acc
+
+                        group :: _ ->
+                            { group | tips = tip.text :: group.tips }
+                                :: List.filter (\g -> g.category /= tip.category) acc
+                )
+                []
+                tipList
+
+        -- Sort categories according to their natural order
+        categoryOrder cat =
+            case cat of
+                GeneralCat ->
+                    0
+
+                HerosCat ->
+                    1
+
+                TitansCat ->
+                    2
+
+                SpookyFestivalCat ->
+                    3
+
+                VariousCat ->
+                    4
+    in
+    List.sortBy (\group -> categoryOrder group.category) grouped
+
+
+type alias AdvImages =
+    { thumb : String, solution : String }
+
+
+type alias AdvPath =
+    { colour : String, path : String }
+
+
+type alias AdvNote =
+    { id : Int, description : String }
+
+
+type alias Adventure =
+    { id : Int
+    , name : String
+    , images : AdvImages
+    , paths : List AdvPath
+    , notes : Maybe (List AdvNote)
+    }
