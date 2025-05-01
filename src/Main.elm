@@ -9,7 +9,7 @@ import Components.NewsComponent exposing (newsComponent)
 import Components.RulesComponent exposing (rulesComponent)
 import Components.SectionComponent exposing (sectionComponent)
 import Data.News exposing (news, years)
-import Html exposing (Html, div, text)
+import Html exposing (Html, div, img, text)
 import Html.Attributes exposing (..)
 import Router exposing (parseRoute)
 import Types exposing (Flags, Model, Msg(..), Route(..))
@@ -115,17 +115,20 @@ viewContent model =
             Champions ->
                 div [] [ sectionComponent "How to be a Champion of New Athena" championsComponent ]
 
-            Types.WarProgram ->
+            WarProgram ->
                 div [] [ sectionComponent "" <| text "War PRogram" ]
 
-            Types.CounterTeams ->
+            CounterTeams ->
                 div [] [ sectionComponent "" <| text "CounterTeams" ]
 
             Users ->
                 div [] [ sectionComponent "" <| text "Users" ]
 
+            Image filename ->
+                div [] [ sectionComponent "" <| img [ src filename, class "w-full!" ] [] ]
+
             _ ->
-                div [] [ sectionComponent "" <| text "NotFound" ]
+                div [] [ sectionComponent "" <| text "notFound" ]
         ]
 
 

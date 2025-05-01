@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -11,13 +12,27 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
     clean: true,
+    publicPath: '/',
   },
   plugins: [new HtmlWebpackPlugin({
     title: 'elm with webpack'
     , favicon: './src/images/favicon.ico'
+  }),
+  new CopyWebpackPlugin({ // Add this plugin
+    patterns: [
+      {
+        from: 'src/images',
+        to: 'images'
+      }
+    ]
   })],
   devServer: {
-    static: './dist/'
+
+    static: {
+      directory: path.join(__dirname, 'src')
+      , publicPath: '/'
+    }
+    // static: './dist/'
   },
   module: {
     rules: [
@@ -29,6 +44,9 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]'
+        }
       },
 
       {
