@@ -3,13 +3,13 @@ module Components.RulesComponent exposing (..)
 import Data.Rules exposing (rules)
 import Html exposing (Html, button, div, p, text)
 import Html.Attributes exposing (class, id)
-import Types exposing (Msg, Rule)
+import Types exposing (Msg, Rule, customWidth)
 
 
 rulesComponent : Html Msg
 rulesComponent =
-    div []
-        [ div [ class "mx-5 accordion divide-neutral/20 divide-y" ]
+    div [ class customWidth ]
+        [ div [ class " mx-5 accordion divide-neutral/20 divide-y" ]
             -- active
             (List.map makeItem rules)
         ]

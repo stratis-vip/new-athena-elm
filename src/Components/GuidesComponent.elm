@@ -6,13 +6,13 @@ import Data.Adventures exposing (adventures)
 import Data.Tips exposing (tips)
 import Html exposing (Html, div, li, p, text, ul)
 import Html.Attributes exposing (class)
-import Types exposing (Msg, Tip, TipCategory(..))
+import Types exposing (Msg, Tip, TipCategory(..), customWidth)
 
 
 guidesComponent : Html Msg
 guidesComponent =
-    div []
-        [ sectionComponent "Assorted Tips" (div [ class "sm: mx-10" ] (createTips <| sortByCat tips))
+    div [ class customWidth ]
+        [ sectionComponent "Assorted Tips" (div [] (createTips <| sortByCat tips))
         , sectionComponent "Adventures"
             (div [] <|
                 List.map advComponent adventures

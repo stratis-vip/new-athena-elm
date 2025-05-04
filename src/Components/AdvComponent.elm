@@ -2,7 +2,7 @@ module Components.AdvComponent exposing (..)
 
 import Html exposing (Html, a, div, img, p, span, text)
 import Html.Attributes exposing (alt, class, href, src)
-import Types exposing (Adventure, Msg)
+import Types exposing (Adventure, Msg, customWidth)
 
 
 extractFilename : String -> String
@@ -17,7 +17,7 @@ extractFilename fullPath =
 advComponent : Adventure -> Html Msg
 advComponent adv =
     div []
-        [ div [ class "mb-3" ]
+        [ div [ class ("mb-3 i" ++ customWidth) ]
             [ p [ class "font-bold" ] [ text adv.name ]
             , div []
                 [ div [ class "font-bold text-center" ] [ text "Recommended Solution" ]

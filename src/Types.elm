@@ -160,3 +160,12 @@ type alias Adventure =
     , paths : List AdvPath
     , notes : Maybe (List AdvNote)
     }
+
+
+
+-- for styling all components with same width
+
+
+customWidth : String
+customWidth =
+    "sm:w-xl and lg:w-4xli"

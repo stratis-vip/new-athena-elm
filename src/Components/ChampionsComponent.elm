@@ -3,13 +3,13 @@ module Components.ChampionsComponent exposing (..)
 import Data.ChampionRules exposing (championRules)
 import Html exposing (Html, a, div, text)
 import Html.Attributes exposing (class, href)
-import Types exposing (ChampionRules, Msg(..))
+import Types exposing (ChampionRules, Msg(..), customWidth)
 
 
 championsComponent : Html Msg
 championsComponent =
     div
-        [ class "container mt-4  sm:text-lg sm:mx-4 mx-2 " ]
+        [ class ("container mt-4  sm:text-lg sm:mx-4 mx-2 " ++ customWidth) ]
         (fillChampTips championRules)
 
 
