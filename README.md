@@ -1,6 +1,6 @@
 # New Athena's site converted and improved to Elm
 
-## This project is based on [webpack-elm-tailwind-4](https://github.com/stratis-vip/webpack-elm-tailwind-4)
+## This project is based on [elm-vite-tailwind-4](https://github.com/stratis-vip/elm-vite-tailwindcss)
 
 ## Changes
 
@@ -35,3 +35,11 @@ Right now the Champions.
   1. Succesfully remove "require" part of images!!!
   2. Adventures works correctly in guides
   3. Assorted tips are working in guides
+
+### 2025-05-04
+
+  1. Convert the project to vite.
+  2. Remove webpack's complex confuguration
+  3. Vite server can manage routes so no need for changes in routes.
+  4. Removes news route (default to home "/").
+  5. Add favicons.

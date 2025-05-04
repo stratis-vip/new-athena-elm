@@ -101,9 +101,6 @@ viewContent model =
     div []
         [ case model.route of
             Home ->
-                div [] [ sectionComponent "" championsComponent ]
-
-            NewsPage ->
                 div [] [ sectionComponent "News" <| newsComponent model years news ]
 
             Guides ->

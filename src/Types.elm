@@ -22,7 +22,6 @@ type alias ID =
 
 type Route
     = Home
-    | NewsPage
     | Guides
     | Rules
     | Champions

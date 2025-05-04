@@ -39,7 +39,7 @@ setExplanationClass rule =
 
 setTitleID : Rule -> String
 setTitleID rule =
-    "id " ++ String.fromInt rule.id
+    "id-" ++ String.fromInt rule.id
 
 
 makeItem : Rule -> Html Msg

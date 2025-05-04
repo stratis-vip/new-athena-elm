@@ -25,7 +25,7 @@ navBarComponent model =
                         [ class "my-0"
                         , style "width" "48px"
                         , style "height" "48px"
-                        , src "require:src/images/athena.png"
+                        , src "/images/athena.png"
                         , alt "new-athena flag"
                         ]
                         []
@@ -40,7 +40,7 @@ navBarComponent model =
                 ]
             , div [ id "burger", class "sm:hidden self-center mr-1" ]
                 [ img
-                    [ src "require:src/images/burger.svg"
+                    [ src "/images/burger.svg"
                     , onClick ToggleBurger
                     , style "width" "36px"
                     ]
@@ -54,7 +54,7 @@ navBarComponent model =
 
 menuChoices : List ( String, String )
 menuChoices =
-    [ ( "/news", "News" )
+    [ ( "/", "News" )
     , ( "/rules", "Rules" )
     , ( "/champions", "Champions" )
     , ( "/guides", "Guides" )

@@ -30,8 +30,7 @@ extractFilename fullPath =
 routeParser : Parser (Route -> a) a
 routeParser =
     oneOf
-        [ map Guides top -- Temporary development root
-        , map NewsPage (s "news")
+        [ map Home top -- Temporary development root
         , map Guides (s "guides")
         , map Rules (s "rules")
         , map Champions (s "champions")
